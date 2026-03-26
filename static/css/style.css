@@ -1,0 +1,89 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f2f2f2;
+    font-family: poppins;
+    overflow:hidden;
+}
+
+    /* Content Area */
+
+.chat-container{
+    width:400px;
+    height:500px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-header{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.chat-header h2{
+    margin:0;
+}
+
+.chat-box{
+    flex:1;
+    padding:15px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    scroll-behavior:smooth;
+}
+
+.message{
+    padding:10px;
+    border-radius:10px;
+    max-width:70%;
+    word-wrap:break-word;
+}
+
+.user{
+    background:#4CAF50;
+    color:white;
+    align-self:flex-end;
+}
+
+.bot{
+    background:#e4e4e4;
+    align-self:flex-start;
+}
+
+.input-area{
+    display:flex;
+    padding:10px;
+    border-top:1px solid #eee;
+    gap:5px;
+}
+
+.input-area input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.input-area button{
+    padding:10px 15px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.input-area button:hover{
+    background:#43a047;
+}
+
+    /* Content Area End */
