@@ -1,19 +1,111 @@
 
 *{
     margin: 0;
-    padding: 0;
 }
 
 body{
     font-family: poppins;
-    overflow:hidden;
-    background: linear-gradient(
-        180deg,
-        #4CAF50,
-        white
-    );
+    background: #ffffff
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+.section-scroll {
+  height: 0;
+  scroll-margin-top: 90px;
+}
+    /* Navbar Area */
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  width: 100%;
+  position: fixed;
+  background-color: #8f8cf6;
+  border-bottom: 1px solid #5e5b9d;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.navbar-container a {
+  justify-content: space-around;
+  padding: 15px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  list-style: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-link.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+    /* Navbar Area End */
+
     /* Content Area */
+
+.opener-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opener-items {
+  text-align: center;
+}
+
+.opener-items h1{
+    color: transparent;
+    -webkit-text-stroke: 2px #5e5b9d;
+    font-size: 100px;
+}
+
+.colortext-opener{
+    color: #6e6bba;
+}
+
+.opener-items p{
+    font-size: 30px;
+}
+
+.opener-items h3 {
+    align-items: center;
+}
+
+.opener-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  padding: 12px 30px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  color: #5C6BC0;
+  background: transparent;
+  border-radius: 6px;
+  border: 2px solid #5C6BC0;
+  min-width: 140px;
+  min-height: 44px;
+}
+
+.opener-button:hover{
+    color: #ffffff;
+    background:#6e6bba;
+}
 
 .content-container{
     height:100vh;
@@ -26,6 +118,7 @@ body{
     width:500px;
     height:550px;
     background:white;
+    border:1px solid #ccc;
     border-radius:10px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
     display:flex;
@@ -36,10 +129,12 @@ body{
 .chat-header{
     padding:10px;
     text-align:center;
-    border-bottom:1px solid #eee;
+    border-bottom:2px solid #ccc;
 }
 
 .chat-header h2{
+    color: transparent;
+    -webkit-text-stroke: 1px #6e6bba;
     margin:0;
     padding: 10px;
 }
@@ -62,13 +157,14 @@ body{
 }
 
 .user{
-    background:#4CAF50;
+    background:#8f8cf6;
     color:white;
     align-self:flex-end;
 }
 
 .bot{
-    background:#e4e4e4;
+    background:#8f8cf6;
+    color: white;
     align-self:flex-start;
 }
 
@@ -88,7 +184,7 @@ body{
 
 .input-area button{
     padding:10px 15px;
-    background:#4CAF50;
+    background:#8f8cf6;
     color:white;
     border:none;
     border-radius:5px;
@@ -96,7 +192,7 @@ body{
 }
 
 .input-area button:hover{
-    background:#43a047;
+    background:#6e6bba;
 }
 
     /* Content Area End */

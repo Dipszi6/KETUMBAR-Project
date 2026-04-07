@@ -58,6 +58,53 @@ async function sendMessage(){
 
     // UX
     
+const links = document.querySelectorAll(".navbar-link");
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    links.forEach((l) => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 120;
+
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add("active");
+    }
+  });
+});
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  links.forEach((link) => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
 document.getElementById("userInput").addEventListener("keypress",function(e){
 
     if(e.key === "Enter"){
@@ -65,4 +112,10 @@ document.getElementById("userInput").addEventListener("keypress",function(e){
         sendMessage();
     }
 
+});
+
+document.getElementById("btnScroll").addEventListener("click", function() {
+  document.getElementById("chatBot").scrollIntoView({
+    behavior: "smooth"
+  });
 });
