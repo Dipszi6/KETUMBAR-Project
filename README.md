@@ -1,4 +1,4 @@
-# 🛡️ AI Anti-Hoax Detector (Ketumbar v0.01)
+# 🛡️ AI Anti-Hoax Detector V.1.0
 
 ## 📌 Deskripsi Project
 
