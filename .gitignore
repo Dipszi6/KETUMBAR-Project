@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables (PENTING)
+.env
+
+# Virtual environment
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database (opsional bang)
+*.db
+
+# Testing / temp files
+*.tmp

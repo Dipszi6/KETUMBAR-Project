@@ -44,9 +44,65 @@ async function sendMessage(){
 
     typing.remove();
 
+    // BotMSG
     let botMsg = document.createElement("div");
     botMsg.classList.add("message","bot");
-    botMsg.innerText = data.reply;
+    botMsg.innerHTML = formatAIResponse(data.reply);
+
+    function formatAIResponse(text){
+
+    let label = "";
+    let indikator = "";
+    let saran = "";
+
+    let lines = text.split("\n");
+
+    lines.forEach(line => {
+        if(line.toLowerCase().includes("label")){
+            label = line;
+        }
+        else if(line.toLowerCase().includes("-")){
+            if(indikator !== null){
+                indikator += `<li>${line.replace("-", "").trim()}</li>`;
+            }
+        }
+    });
+
+    let parts = text.split("Saran:");
+
+    if(parts.length > 1){
+        indikator = parts[0].split("Indikator:")[1] || "";
+        saran = parts[1];
+    }
+
+    let indikatorHTML = indikator
+        .split("\n")
+        .filter(i => i.includes("-"))
+        .map(i => `<li>${i.replace("-", "").trim()}</li>`)
+        .join("");
+
+    let saranHTML = saran
+        .split("\n")
+        .filter(i => i.includes("-"))
+        .map(i => `<li>${i.replace("-", "").trim()}</li>`)
+        .join("");
+
+    return `
+        <div class="ai-card">
+            <div class="label">${label}</div>
+
+            <div class="section">
+                <b>⚠️ Indikator:</b>
+                <ul>${indikatorHTML}</ul>
+            </div>
+
+            <div class="section">
+                <b>✅ Saran:</b>
+                <ul>${saranHTML}</ul>
+            </div>
+        </div>
+    `;
+}
 
     chatBox.appendChild(botMsg);
 
