@@ -21,50 +21,58 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: 10px 30px;
   width: 100%;
   position: fixed;
+  top: 0; 
   background-color: #8f8cf6;
   border-bottom: 1px solid #5e5b9d;
   z-index: 999;
-  cursor: pointer;
-}
-
-.navbar-container a {
-  justify-content: space-around;
-  padding: 15px;
-  margin: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 3px;
-  list-style: none;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.navbar-link.active {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
 }
 
 .navbar-title {
-    padding-right: 60% ;
-    color: #ffffff;
+  margin-right: 20px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.navbar-container a {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  padding: 10px 10px;
+  margin: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar-container a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-link.active {
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar-container i {
+  font-size: 8px;
+}
     /* Navbar Area End */
 
     /* Content Area */
-
+    /* Opener */
 .opener-container{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e5e5f7;
-    opacity: 0.9;
-    background-image: radial-gradient(#5e5b9d 1.4000000000000001px, #e5e5f7 1.4000000000000001px);
-    background-size: 28px 28px;
+    background-color: #f5f7fa;
 }
 
 .opener-items {
@@ -82,6 +90,7 @@ html{
 }
 
 .opener-items p{
+    font-weight: 300;
     font-size: 30px;
 }
 
@@ -114,16 +123,14 @@ html{
     color: #ffffff;
     background:#6e6bba;
 }
-
+    /* OpenerEnd */
+    /* Chat */
 .content-container{
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color: #e5e5f7;
-    opacity: 0.9;
-    background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 70px 70px, linear-gradient(#5e5b9d 5.6000000000000005px, transparent 5.6000000000000005px) 0 -2.8000000000000003px, linear-gradient(90deg, #5e5b9d 5.6000000000000005px, #e5e5f7 5.6000000000000005px) -2.8000000000000003px 0;
-    background-size: 140px 140px, 140px 140px, 70px 70px, 70px 70px;
+    background-color: #f5f7fa;
 }
 
 .chat-container{
@@ -211,7 +218,7 @@ html{
     background:#8f8cf6;
     border-radius:10px;
     padding:12px;
-    border-left:5px solid #4CAF50;
+    border-left:5px solid #ccc;
     font-size:14px;
 }
 
@@ -229,109 +236,181 @@ html{
     margin-bottom:4px;
 }
 
-.section{
-    margin-top:8px;
+    /* ChatEND */
+
+    /*Modul*/
+.modul-container {
+    background-color: #f5f7fa;
 }
 
+.title-modul{
+    padding: 6% 0 0 80px;
+    display: flex;
+    color: #8f8cf6;
+    font-size: 32px;
+    align-content: center;
+    justify-content: left;
+}
 
-.modul-container {
-    margin: 0;
-    background-color: #e5e5f7;
-   background-color: #e5e5f7;
-    opacity: 0.9;
-    background-image:  radial-gradient(#5e5b9d 1.4000000000000001px, transparent 1.4000000000000001px), radial-gradient(#5e5b9d 1.4000000000000001px, #e5e5f7 1.4000000000000001px);
-    background-size: 56px 56px;
-    background-position: 0 0,28px 28px;
+.title-modul i{
+    color: #8f8cf6;
+    position: relative;
+    top: 8px;
+    right: 10px;
+    font-size: 30px;
 }
 
 .card-modul {
     display: grid;
-    justify-items: center;
-    padding: 5% 5% 5% 5%;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 3%;
-}
-    
-.card1 {
-    padding: 60px 50%;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
+    gap: 20px;
+    padding: 2% 5% 5% 5%;
 }
 
-.card2 {
-    padding: 60px 50%;
+.modul-card {
     background-color: #eee;
     border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
 }
 
-.card3 {
-    padding: 60px 50%;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
+.modul-card:hover {
+    transform: translateY(-5px);
 }
 
-.card4 {
-    padding: 60px 50%;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-row-start: 3;
+.large {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
-.card5 {
-    padding: 60px 50%;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 3;
+.full {
+    grid-column: span 6;
 }
 
-.card6 {
-    padding: 60px 50%;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
-    grid-row-start: 3;
+.modul-card i {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
 }
 
-.card7 {
-    padding: 60px 50%;
-    background-color: #eee;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    grid-column: span 6 / span 6;
-    grid-row-start: 5;
+.modul-card:nth-child(1) i { color: #fbc02d; }
+.modul-card:nth-child(2) i { color: #e53935; }
+.modul-card:nth-child(3) i { color: #1e88e5; }
+.modul-card:nth-child(4) i { color: #43a047; }
+.modul-card:nth-child(5) i { color: #6d4c41; }
+.modul-card:nth-child(6) i { color: #8e24aa; }
+.modul-card:nth-child(7) i { color: #00897b; }
+
+.modul-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
 }
 
+.modul-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.modul-card.done {
+    background-color: #e8f5e9;
+    border-color: #8f8cf6;
+}
+
+.modul-card.done::after {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #4caf50;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-header {
+    position: sticky;
+    top: 0;
+    background: #8f8cf6;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    border-bottom: 1px solid #ddd;
+    z-index: 10;
+}
+
+.modal-header h2{
+    position: relative;
+    font-weight: 500;
+    color: white;
+    left: 20px;
+    top: 8px;
+}
+
+.modal-content {
+    background: #f9f9ff;
+    padding: 25px;
+    width: 60%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid #e0e0ff;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.modal-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-content li {
+    margin-bottom: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    padding: 0px 5px;
+    color: #e53935;
+    font-size: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+/* ModulEnd */
+
+/* ContentAreaStart [MiniGame] */
 .minigame-container{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e5e5f7;
-    opacity: 0.9;
-    background-image: radial-gradient(#5e5b9d 1.4000000000000001px, #e5e5f7 1.4000000000000001px);
-    background-size: 28px 28px;
+    background-color: #f5f7fa;
 
 }
 
@@ -358,5 +437,5 @@ html{
 .minigame-items h3 {
     align-items: center;
 }
-
+/* ContentAreaEND [MiniGame] */
     /* Content Area End */

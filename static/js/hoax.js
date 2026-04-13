@@ -175,3 +175,71 @@ document.getElementById("btnScroll").addEventListener("click", function() {
     behavior: "smooth"
   });
 });
+
+    // Modul UI
+let modulData = {};
+let isLoaded = false;
+
+fetch("/static/modul.json")
+    .then(res => res.json())
+    .then(data => {
+        modulData = data;
+        isLoaded = true;
+        console.log("Modul loaded ✅");
+    })
+    .catch(err => {
+        console.error("Gagal load modul:", err);
+    });
+
+function openModal(modul) {
+
+    if (!isLoaded) {
+    document.getElementById("modalTitle").innerText = "Loading...";
+    document.getElementById("modalContent").innerHTML = "Sedang memuat modul...";
+    document.getElementById("modulModal").style.display = "flex";
+    return;
+}
+
+    const cards = document.querySelectorAll(".modul-card");
+    const title = document.getElementById("modalTitle");
+    const content = document.getElementById("modalContent");
+    const modal = document.getElementById("modulModal");
+
+    const data = modulData[modul];
+
+    if (!data) {
+        alert("Modul tidak ditemukan");
+        return;
+    }
+
+    title.innerText = data.title;
+    content.innerHTML = data.content;
+
+    modal.style.display = "flex";
+
+    if (cards[modul - 1]) {
+        cards[modul - 1].classList.add("done");
+        localStorage.setItem("modul_" + modul, "done");
+    }
+}
+
+document.querySelector(".close-btn").onclick = function(){
+    document.getElementById("modulModal").style.display = "none";
+}
+
+window.onclick = function(event){
+    const modal = document.getElementById("modulModal");
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+window.onload = function() {
+    const cards = document.querySelectorAll(".modul-card");
+
+    cards.forEach((card, index) => {
+        if(localStorage.getItem("modul_" + (index + 1)) === "done"){
+            card.classList.add("done");
+        }
+    });
+}

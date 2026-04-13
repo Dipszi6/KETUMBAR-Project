@@ -6,30 +6,46 @@
 
 <link rel="stylesheet" href="/static/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <!-- NavBarArea -->
+<section id="home" class="section-scroll"></section>
 
-    <section id="home" class="section-scroll"></section>
-        <div class="navbar-container">
-            <h3 class="navbar-title">AntiHoax</h3>
-            <a href="#home" class="navbar-link"> Home </a>
-            <a href="#chatBot" class="navbar-link"> ChatBot </a>
-            <a href="#modul" class="navbar-link">Modul</a>
-            <a href="#miniGames" class="navbar-link">Mini Games</a>
-        </div>
+    <div class="navbar-container">
+        <h3 class="navbar-title">
+            <i class="fa-solid fa-shield-halved"></i> AntiHoax
+        </h3>
 
-    <!-- ContentArea -->
+        <a href="#home" class="navbar-link">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+
+        <a href="#chatBot" class="navbar-link">
+            <i class="fa-solid fa-comments"></i> ChatBot
+        </a>
+
+        <a href="#modul" class="navbar-link">
+            <i class="fa-solid fa-book"></i> Modul
+        </a>
+
+        <a href="#miniGames" class="navbar-link">
+            <i class="fa-solid fa-gamepad"></i> Mini Games
+        </a>
+    </div>
+
+    <!-- ContentAreaStart -->
 
     <div class="opener-container">
         <div class="opener-items">
         <h1>Anti<span class="colortext-opener">Hoax</span>V1.0</h1>
-        <p>Program ini masih dalam tahap <span class="colortext-opener">pengembangan</span></p>
+        <p>Chat Bot AI Pendeteksi Berita <span class="colortext-opener">Bohong</span></p>
         <button class="opener-button" id="btnScroll">Mulai Sekarang</button>
     </div>
     </div>
 
+    <!-- [ChatBotSTART] -->
     <section id="chatBot" class="section-scroll"></section>
     <main class="content-container">
         <div class="chat-container">
@@ -38,29 +54,77 @@
         </div>
 
     <div id="chatBox" class="chat-box"></div>
-
     <div class="input-area">
         <input type="text" id="userInput" placeholder="Tulis pesan...">
         <button onclick="sendMessage()">Kirim</button>
     </div>
         </div>
     </main>
-
+    <!-- [ChatBotEND] -->
+    
+    <!-- [ModulSTART] -->
     <section id="modul" class="section-scroll"></section>
     <main class="modul-container">
-        <!-- Modul Materi -->
-        <div class="card-modul"> 
-            <div class="card1">1</div>
-            <div class="card2">2</div>
-            <div class="card3">3</div>
-            <div class="card4">4</div>
-            <div class="card5">5</div>
-            <div class="card6">6</div>
-            <div class="card7">7</div>
-        <!-- Modul Materi end -->
+        <div class="title-modul">
+            <i class="fa-solid fa-book"></i>
+            <h4> | Modul Edukasi AntiHoax</h4>
         </div>
+        <div class="card-modul">
+            <div class="modul-card large" onclick="openModal(1)">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Modul 1</h3>
+                <p>Pengenalan Hoaks</p>
+            </div>
+
+            <div class="modul-card large" onclick="openModal(2)">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h3>Modul 2</h3>
+                <p>Ciri-ciri Hoaks</p>
+            </div>
+
+            <div class="modul-card large" onclick="openModal(3)">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Modul 3</h3>
+                <p>Jenis Hoaks</p>
+            </div>
+
+            <div class="modul-card large" onclick="openModal(4)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Modul 4</h3>
+                <p>Cara Verifikasi</p>
+            </div>
+
+            <div class="modul-card large" onclick="openModal(5)">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Modul 5</h3>
+                <p>Sumber Terpercaya</p>
+                </div>
+
+            <div class="modul-card large" onclick="openModal(6)">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Modul 6</h3>
+                <p>Latihan Analisis</p>
+            </div>
+
+            <div class="modul-card full" onclick="openModal(7)">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>Modul 7</h3>
+                <p>Kesimpulan</p>
+            </div>
     </main>
     
+    <div id="modulModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle"></h2>
+            <span class="close-btn">&times;</span>
+        </div>
+        <div id="modalContent"></div>
+    </div>
+</div>
+    <!-- [Modul END] -->
+
+    <!-- [MinigamesStart] -->
     <section id="miniGames" class="section-scroll"></section>
     <main class="minigame-container">
         <div class="minigame-items">
