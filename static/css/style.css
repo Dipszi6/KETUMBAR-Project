@@ -25,8 +25,7 @@ html{
   width: 100%;
   position: fixed;
   top: 0; 
-  background-color: #8f8cf6;
-  border-bottom: 1px solid #5e5b9d;
+  background-color: #4c9bf7;
   z-index: 999;
 }
 
@@ -81,12 +80,12 @@ html{
 
 .opener-items h1{
     color: #e5e5f7;
-    -webkit-text-stroke: 2px #5e5b9d;
+    -webkit-text-stroke: 2px #4c9bf7;
     font-size: 100px;
 }
 
 .colortext-opener{
-    color: #6e6bba;
+    color: #4c9bf7;
 }
 
 .opener-items p{
@@ -111,17 +110,17 @@ html{
   font-size: 16px;
   font-family: Arial, sans-serif;
   font-weight: 600;
-  color: #5C6BC0;
+  color: #4c9bf7;
   background: #e5e5f7;
   border-radius: 6px;
-  border: 2px solid #5C6BC0;
+  border: 2px solid #4c9bf7;
   min-width: 140px;
   min-height: 44px;
 }
 
 .opener-button:hover{
     color: #ffffff;
-    background:#6e6bba;
+    background:#4c9bf7;
 }
     /* OpenerEnd */
     /* Chat */
@@ -153,7 +152,7 @@ html{
 
 .chat-header h2{
     color: transparent;
-    -webkit-text-stroke: 1px #6e6bba;
+    -webkit-text-stroke: 1px #4c9bf7;
     margin:0;
     padding: 10px;
 }
@@ -176,13 +175,13 @@ html{
 }
 
 .user{
-    background:#8f8cf6;
+    background:#4c9bf7;
     color:white;
     align-self:flex-end;
 }
 
 .bot{
-    background:#8f8cf6;
+    background:#4c9bf7;
     color: white;
     align-self:flex-start;
 }
@@ -203,7 +202,7 @@ html{
 
 .input-area button{
     padding:10px 15px;
-    background:#8f8cf6;
+    background:#4c9bf7;
     color:white;
     border:none;
     border-radius:5px;
@@ -211,14 +210,14 @@ html{
 }
 
 .input-area button:hover{
-    background:#6e6bba;
+    background:#68aaf9;
 }
 
 .ai-card{
-    background:#8f8cf6;
+    background:#4c9bf7;
     border-radius:10px;
     padding:12px;
-    border-left:5px solid #ccc;
+    border-left:5px solid #b6b6b6;
     font-size:14px;
 }
 
@@ -246,14 +245,14 @@ html{
 .title-modul{
     padding: 6% 0 0 80px;
     display: flex;
-    color: #8f8cf6;
+    color: #000000;
     font-size: 32px;
     align-content: center;
     justify-content: left;
 }
 
 .title-modul i{
-    color: #8f8cf6;
+    color: #4c9bf7;
     position: relative;
     top: 8px;
     right: 10px;
@@ -297,12 +296,12 @@ html{
     display: block;
 }
 
-.modul-card:nth-child(1) i { color: #fbc02d; }
+.modul-card:nth-child(1) i { color: #dfae44; }
 .modul-card:nth-child(2) i { color: #e53935; }
-.modul-card:nth-child(3) i { color: #1e88e5; }
-.modul-card:nth-child(4) i { color: #43a047; }
-.modul-card:nth-child(5) i { color: #6d4c41; }
-.modul-card:nth-child(6) i { color: #8e24aa; }
+.modul-card:nth-child(3) i { color: #1e56a3; }
+.modul-card:nth-child(4) i { color: #1b7f5c; }
+.modul-card:nth-child(5) i { color: #e53935; }
+.modul-card:nth-child(6) i { color: #4688d8; }
 .modul-card:nth-child(7) i { color: #00897b; }
 
 .modul-card h3 {
@@ -318,7 +317,7 @@ html{
 
 .modul-card.done {
     background-color: #e8f5e9;
-    border-color: #8f8cf6;
+    border-color: #4c9bf7;
 }
 
 .modul-card.done::after {
@@ -344,7 +343,7 @@ html{
 .modal-header {
     position: sticky;
     top: 0;
-    background: #8f8cf6;
+    background: #4c9bf7;
     padding-bottom: 15px;
     border-radius: 5px;
     border-bottom: 1px solid #ddd;
@@ -404,38 +403,4 @@ html{
 }
 /* ModulEnd */
 
-/* ContentAreaStart [MiniGame] */
-.minigame-container{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5f7fa;
-
-}
-
-.minigame-items{
-    text-align: center;    
-}
-
-.colortext-modul{
-    color: #e5e5f7;
-    padding: 5px;
-    background-color: #5C6BC0;
-}
-
-.minigame-items h1{
-    color: #e5e5f7;
-    -webkit-text-stroke: 2px #5C6BC0;
-    font-size: 120px;
-}
-
-.minigame-items p{
-    font-size: 20px;
-}
-
-.minigame-items h3 {
-    align-items: center;
-}
-/* ContentAreaEND [MiniGame] */
     /* Content Area End */

@@ -111,7 +111,6 @@ async function sendMessage(){
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-
     // UX
     
 const links = document.querySelectorAll(".navbar-link");
