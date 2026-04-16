@@ -125,6 +125,76 @@
 </div>
     <!-- [Modul END] -->
 
+    <!-- [Quiz Start] -->
+
+    <section id="quiz" class="quiz-section">
+    <div class="container">
+        
+        <div class="quiz-card" id="quiz-container">
+            
+            <div id="start-screen" class="quiz-content active">
+                <div class="badge-icon">🛡️</div>
+                <h2 class="title">Quiz Literasi Anti Hoax</h2>
+                <p class="subtitle">Uji ketajaman Anda dalam membedakan fakta dan informasi menyesatkan.</p>
+                
+                <div class="meta-info">
+                    <div class="meta-item"><strong>10</strong> Soal</div>
+                    <div class="meta-item"><strong>100</strong> Skor Max</div>
+                </div>
+
+                <button class="btn btn-primary" onclick="startQuiz()">Mulai Quiz Sekarang</button>
+            </div>
+
+            <div id="play-screen" class="quiz-content">
+                <div class="quiz-header">
+                    <div class="progress-container">
+                        <span id="question-count">Soal 1 dari 10</span>
+                        <div class="progress-bar-bg">
+                            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="question-text" class="question-title">Memuat pertanyaan...</h3>
+                
+                <div id="options-container" class="options-grid"></div>
+
+                <button id="next-btn" class="btn btn-primary" onclick="nextQuestion()" disabled>Lanjutkan</button>
+            </div>
+
+            <div id="result-screen" class="quiz-content">
+                <div class="result-header">
+                    <h2 class="result-title">Quiz Selesai!</h2>
+                    <div class="score-card">
+                        <span class="score-label">Skor Anda</span>
+                        <h1 id="final-score">0 / 100</h1>
+                    </div>
+                    <div id="score-feedback" class="score-feedback"></div>
+                    
+                    <div class="stats-row">
+                        <div class="stat-box">Benar: <span id="stat-correct">0</span></div>
+                        <div class="stat-box">Salah: <span id="stat-wrong">0</span></div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <h3 class="review-title">Review Jawaban</h3>
+                <div id="review-container" class="review-list">
+                    </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="restartQuiz()">Ulangi Quiz</button>
+                    <button class="btn btn-outline" onclick="window.location.href='#home'">Kembali ke Home</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Quiz END -->
     <!-- ContentAreaEND -->
     
     <!-- FooterStart -->
@@ -136,6 +206,7 @@
     </nain>
     <!-- FooterEnd -->
 <script src="/static/js/hoax.js"></script>
+<script src="/static/js/quiz.js"></script>
 
 </body>
 </html>

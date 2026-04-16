@@ -1,0 +1,52 @@
+[
+    {
+        "question": "Apa ciri utama dari sebuah berita hoax?",
+        "options": ["Judul provokatif & bombastis", "Mencantumkan tanggal terbit", "Ditulis oleh jurnalis resmi", "Memiliki sumber data valid"],
+        "answer": "Judul provokatif & bombastis"
+    },
+    {
+        "question": "Jika menerima pesan berisi hadiah link subsidi, apa tindakan Anda?",
+        "options": ["Langsung klik", "Verifikasi ke website resmi pemerintah", "Sebarkan ke grup keluarga", "Isi formulir datanya"],
+        "answer": "Verifikasi ke website resmi pemerintah"
+    },
+    {
+        "question": "Istilah untuk berita bohong yang menyerupai berita asli adalah...",
+        "options": ["Clickbait", "Disinformasi", "Infografis", "Editorial"],
+        "answer": "Disinformasi"
+    },
+    {
+        "question": "Manakah cara mengecek keaslian foto di internet?",
+        "options": ["Melihat warnanya", "Google Reverse Image Search", "Melihat jumlah like", "Bertanya di komentar"],
+        "answer": "Google Reverse Image Search"
+    },
+    {
+        "question": "Judul berita yang menjebak untuk diklik disebut...",
+        "options": ["Hoax", "Hard News", "Clickbait", "Advertorial"],
+        "answer": "Clickbait"
+    },
+    {
+        "question": "Pesan berantai WhatsApp yang diawali 'Sebarkan!' biasanya adalah...",
+        "options": ["Pesan penting", "Instruksi resmi", "Indikasi Hoax", "Kabar dari CEO"],
+        "answer": "Indikasi Hoax"
+    },
+    {
+        "question": "Lembaga resmi di Indonesia yang memverifikasi aduan hoax adalah...",
+        "options": ["Kemenpora", "Kemendagri", "Kominfo", "Kemendag"],
+        "answer": "Kominfo"
+    },
+    {
+        "question": "Apa tujuan utama penyebaran hoax di bidang politik?",
+        "options": ["Edukasi rakyat", "Memicu kegaduhan/opini negatif", "Membantu kampanye jujur", "Menghibur netizen"],
+        "answer": "Memicu kegaduhan/opini negatif"
+    },
+    {
+        "question": "Sikap terbaik saat membaca berita yang memicu emosi adalah...",
+        "options": ["Langsung share", "Tulis komentar marah", "Cek kebenaran di media terpercaya", "Blokir yang kirim"],
+        "answer": "Cek kebenaran di media terpercaya"
+    },
+    {
+        "question": "Penyebaran berita bohong diatur dalam undang-undang apa?",
+        "options": ["UU Perkawinan", "UU ITE", "UU Hak Cipta", "UU Ketenagakerjaan"],
+        "answer": "UU ITE"
+    }
+]
