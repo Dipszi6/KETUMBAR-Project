@@ -95,6 +95,8 @@ project/
 │   │   └── style.css
 │   └── js/
 │       └── hoax.js
+│       └── quiz.js
+│
 ```
 
 ## ⚙️ Instalasi & Setup
