@@ -14,20 +14,25 @@ async function loadQuestions() {
         const response = await fetch('/static/questions.json');
 
         if (!response.ok) {
-            throw new Error('Gagal fetch questions.json');
+            throw new Error('Fetch gagal');
         }
 
         questionsData = await response.json();
 
     } catch (error) {
         console.error(error);
-        alert('Gagal memuat soal quiz.');
+
+        document.getElementById('question-text').innerText =
+            "Gagal memuat soal. Silakan refresh.";
     }
 }
 
-// Quiz Start
+// START QUIZ
 async function startQuiz() {
-    await loadQuestions();
+
+    if (questionsData.length === 0) {
+        await loadQuestions();
+    }
 
     questionsData = shuffleArray(questionsData);
 
@@ -36,24 +41,15 @@ async function startQuiz() {
     historyAnswers = [];
 
     switchScreen('play-screen');
-
     showQuestion();
 }
 
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-
-    return array;
+    return array.sort(() => Math.random() - 0.5);
 }
 
-// Jawaban
 function showQuestion() {
     userSelectedAnswer = null;
-
     nextBtn.disabled = true;
 
     const currentQ = questionsData[currentQuestionIndex];
@@ -67,18 +63,16 @@ function showQuestion() {
     const progressPercent =
         ((currentQuestionIndex + 1) / questionsData.length) * 100;
 
-    progressBarFill.style.width =
-        `${progressPercent}%`;
+    progressBarFill.style.width = `${progressPercent}%`;
 
     optionsContainer.innerHTML = '';
 
-   const shuffledOptions = shuffleArray([...currentQ.options]);
+    const shuffledOptions = shuffleArray([...currentQ.options]);
 
-shuffledOptions.forEach(option => {
+    shuffledOptions.forEach(option => {
         const btn = document.createElement('button');
 
         btn.classList.add('option-btn');
-
         btn.innerText = option;
 
         btn.onclick = () => selectAnswer(option, btn);
@@ -95,12 +89,13 @@ function selectAnswer(option, element) {
     });
 
     element.classList.add('selected');
-
     nextBtn.disabled = false;
 }
 
-
 function nextQuestion() {
+
+    if (!userSelectedAnswer) return;
+
     const currentQ = questionsData[currentQuestionIndex];
 
     const isCorrect =
@@ -113,27 +108,26 @@ function nextQuestion() {
         isCorrect: isCorrect
     });
 
+    const scorePerQuestion = 100 / questionsData.length;
+
     if (isCorrect) {
-        score += 10;
+        score += scorePerQuestion;
     }
 
     if (currentQuestionIndex < questionsData.length - 1) {
         currentQuestionIndex++;
-
         showQuestion();
-
     } else {
         showResult();
     }
 }
 
-
-// Hasil
 function showResult() {
+
     switchScreen('result-screen');
 
     document.getElementById('final-score').innerText =
-        `${score} / 100`;
+        `${Math.round(score)} / 100`;
 
     const correctCount =
         historyAnswers.filter(item => item.isCorrect).length;
@@ -147,26 +141,26 @@ function showResult() {
     const feedbackElement =
         document.getElementById('score-feedback');
 
-    if (score < 70) {
+    if (score < 50) {
         feedbackElement.innerHTML = `
             <p style="color:red; font-weight:600;">
-                ⚠️ Literasi digital Anda masih perlu ditingkatkan.
+                ⚠️ Pemahaman masih rendah
             </p>
-            <p>
-                Anda disarankan untuk lebih berhati-hati dalam menerima dan menyebarkan informasi.
-                Selalu cek sumber berita, verifikasi fakta, dan hindari langsung mempercayai judul provokatif
-                agar tidak mudah terpengaruh berita bohong (hoax).
+            <p>Pelajari kembali modul agar lebih kritis terhadap hoaks.</p>
+        `;
+    } else if (score < 80) {
+        feedbackElement.innerHTML = `
+            <p style="color:orange; font-weight:600;">
+                👍 Cukup baik
             </p>
+            <p>Anda sudah cukup memahami, tapi masih bisa ditingkatkan.</p>
         `;
     } else {
         feedbackElement.innerHTML = `
             <p style="color:green; font-weight:600;">
-                ✅ Bagus! Anda cukup memahami literasi anti-hoax.
+                🔥 Sangat baik!
             </p>
-            <p>
-                Pertahankan kebiasaan Anda dalam memverifikasi informasi sebelum mempercayai atau membagikannya.
-                Tetap kritis terhadap berita yang beredar agar dapat membantu mencegah penyebaran hoax di masyarakat.
-            </p>
+            <p>Anda sudah sangat paham literasi anti-hoaks, terus tingkatkan!.</p>
         `;
     }
 
@@ -185,21 +179,23 @@ function showAnswerReview() {
             document.createElement('div');
 
         reviewItem.classList.add('review-item');
+        reviewItem.classList.add(item.isCorrect ? 'correct' : 'wrong');
 
         reviewItem.innerHTML = `
-            <p><strong>${index + 1}. ${item.question}</strong></p>
-            <p>
+            <p class="review-q">${index + 1}. ${item.question}</p>
+
+            <p class="review-ans">
                 Jawaban Anda:
                 <span style="color:${item.isCorrect ? 'green' : 'red'}">
                     ${item.userAnswer}
                 </span>
             </p>
+
             ${
                 !item.isCorrect
-                ? `<p>Jawaban Benar: <strong>${item.correctAnswer}</strong></p>`
+                ? `<p class="correct-reveal">Jawaban benar: ${item.correctAnswer}</p>`
                 : ''
             }
-            <hr>
         `;
 
         reviewContainer.appendChild(reviewItem);
@@ -215,7 +211,5 @@ function switchScreen(screenId) {
         screen.classList.remove('active');
     });
 
-    document
-        .getElementById(screenId)
-        .classList.add('active');
+    document.getElementById(screenId).classList.add('active');
 }

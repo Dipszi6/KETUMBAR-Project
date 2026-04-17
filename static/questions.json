@@ -1,52 +1,102 @@
 [
     {
-        "question": "Apa ciri utama dari sebuah berita hoax?",
-        "options": ["Judul provokatif & bombastis", "Mencantumkan tanggal terbit", "Ditulis oleh jurnalis resmi", "Memiliki sumber data valid"],
-        "answer": "Judul provokatif & bombastis"
+        "question": "Apa yang dimaksud dengan hoaks?",
+        "options": [
+            "Informasi yang selalu benar",
+            "Informasi resmi dari pemerintah",
+            "Informasi yang tidak benar atau menyesatkan",
+            "Berita dari media terpercaya"
+        ],
+        "answer": "Informasi yang tidak benar atau menyesatkan"
     },
     {
-        "question": "Jika menerima pesan berisi hadiah link subsidi, apa tindakan Anda?",
-        "options": ["Langsung klik", "Verifikasi ke website resmi pemerintah", "Sebarkan ke grup keluarga", "Isi formulir datanya"],
-        "answer": "Verifikasi ke website resmi pemerintah"
+        "question": "Mengapa hoaks berbahaya bagi masyarakat?",
+        "options": [
+            "Karena sulit dibaca",
+            "Karena dapat membentuk persepsi yang salah",
+            "Karena terlalu panjang",
+            "Karena menggunakan bahasa asing"
+        ],
+        "answer": "Karena dapat membentuk persepsi yang salah"
     },
     {
-        "question": "Istilah untuk berita bohong yang menyerupai berita asli adalah...",
-        "options": ["Clickbait", "Disinformasi", "Infografis", "Editorial"],
-        "answer": "Disinformasi"
+        "question": "Manakah yang termasuk ciri-ciri hoaks?",
+        "options": [
+            "Memiliki sumber jelas",
+            "Judul sensasional dan provokatif",
+            "Ditulis oleh ahli",
+            "Menggunakan data valid"
+        ],
+        "answer": "Judul sensasional dan provokatif"
     },
     {
-        "question": "Manakah cara mengecek keaslian foto di internet?",
-        "options": ["Melihat warnanya", "Google Reverse Image Search", "Melihat jumlah like", "Bertanya di komentar"],
-        "answer": "Google Reverse Image Search"
+        "question": "Kalimat 'Sebarkan sekarang!' dalam sebuah pesan menunjukkan...",
+        "options": [
+            "Informasi resmi",
+            "Ajakan positif",
+            "Indikasi hoaks",
+            "Berita penting"
+        ],
+        "answer": "Indikasi hoaks"
     },
     {
-        "question": "Judul berita yang menjebak untuk diklik disebut...",
-        "options": ["Hoax", "Hard News", "Clickbait", "Advertorial"],
-        "answer": "Clickbait"
+        "question": "Berikut ini yang termasuk jenis hoaks adalah...",
+        "options": [
+            "Hoaks kesehatan",
+            "Berita resmi pemerintah",
+            "Jurnal ilmiah",
+            "Laporan penelitian"
+        ],
+        "answer": "Hoaks kesehatan"
     },
     {
-        "question": "Pesan berantai WhatsApp yang diawali 'Sebarkan!' biasanya adalah...",
-        "options": ["Pesan penting", "Instruksi resmi", "Indikasi Hoax", "Kabar dari CEO"],
-        "answer": "Indikasi Hoax"
+        "question": "Apa langkah pertama dalam memverifikasi informasi?",
+        "options": [
+            "Langsung menyebarkan",
+            "Cek sumber informasi",
+            "Percaya saja",
+            "Simpan tanpa dibaca"
+        ],
+        "answer": "Cek sumber informasi"
     },
     {
-        "question": "Lembaga resmi di Indonesia yang memverifikasi aduan hoax adalah...",
-        "options": ["Kemenpora", "Kemendagri", "Kominfo", "Kemendag"],
-        "answer": "Kominfo"
+        "question": "Mengapa perlu membandingkan informasi dari beberapa sumber?",
+        "options": [
+            "Agar lebih cepat viral",
+            "Agar terlihat pintar",
+            "Untuk memastikan kebenaran informasi",
+            "Untuk menambah jumlah berita"
+        ],
+        "answer": "Untuk memastikan kebenaran informasi"
     },
     {
-        "question": "Apa tujuan utama penyebaran hoax di bidang politik?",
-        "options": ["Edukasi rakyat", "Memicu kegaduhan/opini negatif", "Membantu kampanye jujur", "Menghibur netizen"],
-        "answer": "Memicu kegaduhan/opini negatif"
+        "question": "Manakah contoh sumber terpercaya?",
+        "options": [
+            "Pesan berantai WhatsApp",
+            "Website resmi pemerintah",
+            "Komentar media sosial",
+            "Blog anonim"
+        ],
+        "answer": "Website resmi pemerintah"
     },
     {
-        "question": "Sikap terbaik saat membaca berita yang memicu emosi adalah...",
-        "options": ["Langsung share", "Tulis komentar marah", "Cek kebenaran di media terpercaya", "Blokir yang kirim"],
-        "answer": "Cek kebenaran di media terpercaya"
+        "question": "Apa tujuan dari latihan analisis hoaks?",
+        "options": [
+            "Menghafal berita",
+            "Mengasah kemampuan mengenali hoaks",
+            "Menyebarkan informasi",
+            "Mengikuti tren"
+        ],
+        "answer": "Mengasah kemampuan mengenali hoaks"
     },
     {
-        "question": "Penyebaran berita bohong diatur dalam undang-undang apa?",
-        "options": ["UU Perkawinan", "UU ITE", "UU Hak Cipta", "UU Ketenagakerjaan"],
-        "answer": "UU ITE"
+        "question": "Apa pesan utama dalam literasi digital terkait hoaks?",
+        "options": [
+            "Sebarkan semua informasi",
+            "Percaya semua berita",
+            "Saring sebelum sharing",
+            "Ikuti semua tren"
+        ],
+        "answer": "Saring sebelum sharing"
     }
 ]
