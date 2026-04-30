@@ -1,53 +1,79 @@
 async function sendMessage(){
 
-    let input = document.getElementById("userInput");
-    let message = input.value;
+    const input = document.getElementById("userInput");
+    const button = document.getElementById("sendBtn");
+    const chatBox = document.getElementById("chatBox");
 
-    if(message.trim() === "") return;
+    const message = input.value.trim();
+    if(message === "") return;
 
-    let chatBox = document.getElementById("chatBox");
+    button.disabled = true;
+    button.innerText = "Menganalisis...";
+    button.style.opacity = "0.6";
 
-    // UserAreaMSG
-
-    let userMsg = document.createElement("div");
+    // USER MESSAGE
+    const userMsg = document.createElement("div");
     userMsg.classList.add("message","user");
     userMsg.innerText = message;
-
     chatBox.appendChild(userMsg);
 
     input.value = "";
 
-    // UserAreaMSG typing
-
-    let typing = document.createElement("div");
+    // TYPING
+    const typing = document.createElement("div");
     typing.classList.add("message","bot");
     typing.innerText = "AI sedang mengetik...";
     chatBox.appendChild(typing);
     chatBox.scrollTop = chatBox.scrollHeight;
 
-    // UserArea End
+    try {
+        const response = await fetch("/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message })
+        });
 
-    // Backend Area
+        const data = await response.json();
 
-    let response = await fetch("/chat",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({
-            message:message
-        })
+        typing.remove();
+
+        const botMsg = document.createElement("div");
+        botMsg.classList.add("message","bot");
+        botMsg.innerHTML = formatAIResponse(data.reply);
+
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    } catch (error) {
+        console.error(error);
+        typing.innerText = "Gagal terhubung ke server";
+    }
+
+    button.disabled = false;
+    button.innerText = "Kirim";
+    button.style.opacity = "1";
+};
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const input = document.getElementById("userInput");
+    const button = document.getElementById("sendBtn");
+
+    input.addEventListener("keydown", function(e){
+
+        if(e.key === "Enter"){
+            e.preventDefault();
+
+            if(!button.disabled){
+                sendMessage();
+            }
+        }
+
     });
 
-    let data = await response.json();
-    console.log(data);
-
-    typing.remove();
-
-    // BotMSG
-    let botMsg = document.createElement("div");
-    botMsg.classList.add("message","bot");
-    botMsg.innerHTML = formatAIResponse(data.reply);
+});
 
     function formatAIResponse(text){
 
@@ -105,13 +131,35 @@ async function sendMessage(){
 }
 
     chatBox.appendChild(botMsg);
-
-    // Backend Area End
-
     chatBox.scrollTop = chatBox.scrollHeight;
-}
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const input = document.getElementById("userInput");
+    const button = document.getElementById("sendBtn");
+
+    input.addEventListener("keydown", function(e){
+
+        if(e.key === "Enter"){
+            e.preventDefault();
+
+            if(!button.disabled){
+                sendMessage();
+            }
+        }
+
+    });
+
+});
 
     // UX
+
+    input.focus();
+    chatBox.scrollTo({
+        top: chatBox.scrollHeight,
+        behavior: "smooth"
+    });
     
 const links = document.querySelectorAll(".navbar-link");
 
