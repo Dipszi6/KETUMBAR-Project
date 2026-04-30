@@ -1,132 +1,129 @@
-# 🛡️ AI Anti-Hoax Detector V.1.0
+# 🛡️ AntiHoax AI Web App
 
-## 📌 Deskripsi Project
+Website edukasi literasi digital berbasis AI untuk membantu pengguna mendeteksi hoaks, memahami karakteristiknya, serta melatih kemampuan analisis melalui modul dan quiz interaktif.
 
-AI Anti-Hoax Detector adalah aplikasi berbasis web yang dirancang untuk membantu pengguna dalam mengidentifikasi potensi informasi hoaks secara cepat dan sederhana.
-Aplikasi ini menggunakan teknologi Artificial Intelligence (AI) berbasis Natural Language Processing (NLP) untuk menganalisis teks berita, unggahan, atau informasi yang diberikan oleh pengguna.
-Sistem tidak hanya memberikan label klasifikasi, tetapi juga menyertakan indikator analisis serta saran verifikasi, sehingga pengguna dapat meningkatkan literasi digital dan kemampuan berpikir kritis.
-
-## 🎯 Tujuan
-
-- Membantu pengguna mendeteksi informasi hoaks secara cepat
-- Meningkatkan literasi digital masyarakat
-- Memberikan edukasi mengenai ciri-ciri informasi palsu
-- Menyediakan platform pembelajaran berbasis AI
+---
 
 ## 🚀 Fitur Utama
 
-### 1. 🔍 Deteksi Hoaks Berbasis AI
+### 🤖 Chatbot AI Deteksi Hoaks
 
-- Input teks bebas dari pengguna
-- Analisis menggunakan AI (Gemini API)
-- Output berupa:
+* Menggunakan **Google Gemini 2.5 Flash API**
+* Analisis teks menjadi:
 
-  - Label (Hoaks / Valid / Perlu Verifikasi)
-  - Confidence (%)
-  - Indikator analisis
-  - Saran verifikasi
+  * **Hoaks**
+  * **Valid**
+  * **Perlu Verifikasi**
+* Output terstruktur:
 
-### 2. ⚠️ Indikator Hoaks (Explainable AI)
+  * Label + persentase keyakinan
+  * Indikator (alasan)
+  * Saran verifikasi
 
-AI tidak hanya memberi hasil, tetapi juga menjelaskan alasan:
+---
 
-- Clickbait / judul sensasional
-- Klaim berlebihan
-- Sumber tidak jelas
-- Ajakan menyebarkan cepat
-- Informasi tanpa bukti
+### 📚 Modul Pembelajaran
 
-### 3. ✅ Saran Verifikasi Fakta
+* Materi literasi digital dalam bentuk card interaktif
+* Dibuka melalui popup modal
+* Progress tersimpan (localStorage)
+* Topik:
 
-Sistem memberikan langkah praktis:
+  1. Pengenalan Hoaks
+  2. Ciri-ciri Hoaks
+  3. Jenis Hoaks
+  4. Cara Verifikasi
+  5. Sumber Terpercaya
+  6. Latihan Analisis
+  7. Kesimpulan
 
-- Cek media resmi
-- Bandingkan dengan sumber terpercaya
-- Gunakan platform cek fakta
-- Hindari menyebarkan tanpa verifikasi
+---
 
-### 4. 💬 Interface Chat Interaktif
+### 🧠 Quiz Interaktif
 
-- UI sederhana berbasis chat
-- Input cepat (Enter support)
-- Respons AI real-time
-- Scroll otomatis
+* 10 soal pilihan ganda
+* Sistem skor otomatis
+* Feedback hasil:
 
-### 5. 🧪 Evaluasi Model (Testing)
+  * Benar / Salah
+  * Review jawaban
+* Progress bar & statistik
 
-- Menggunakan dataset mini (≥30 data)
-- Menghitung akurasi model
-- Mendukung pengujian sistem AI sederhana
+---
 
-### 6. 🧠 Hybrid Mode (AI + Rule-Based Fallback)
+### 🎨 UI/UX
 
-- AI utama menggunakan Gemini API
-- Fallback ke rule-based jika API error
-- Menjamin sistem tetap berjalan saat offline / limit API
+* Responsive layout
+* Card-based design
+* Popup modal
+* Scroll navigation aktif
+* Animasi ringan
+* Chat UX (typing indicator + auto scroll)
 
-## 🏗️ Arsitektur Sistem
+---
 
-Frontend → Backend (Flask) → AI Engine (Gemini API) → Response → UI
+## 🛠️ Teknologi yang Digunakan
 
-Komponen:
+### Backend
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Python Flask
-- AI Engine: Google Gemini API
-- Dataset: JSON (manual / mini dataset)
+* Python (Flask)
+* Google Generative AI (Gemini API)
+* dotenv (environment config)
 
-## 🗂️ Struktur Project
+### Frontend
+
+* HTML5
+* CSS3 (Grid & Flexbox)
+* JavaScript (Vanilla)
+
+---
+
+## 📂 Struktur Project
 
 ```
 project/
 │
 ├── server.py
-├── dataset.json
 ├── .env
-├── .gitignore
-├── modul.json
-├── questions.json
+│
+├── static/
+│   ├── hoax.js
+│   ├── style.css
+│   ├── modul.json
+│   └── questions.json
 │
 ├── templates/
 │   └── index.html
 │
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── hoax.js
-│       └── quiz.js
-│
+└── README.md
 ```
+
+---
 
 ## ⚙️ Instalasi & Setup
 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/repository.git
-cd repository
+git clone https://github.com/username/antihoax-ai.git
+cd antihoax-ai
 ```
 
 ### 2. Install Dependency
 
 ```bash
-pip install -r requirements.txt
-```
-
-atau manual:
-
-```bash
 pip install flask python-dotenv google-generativeai
 ```
 
-### 3. Setup Environment Variable
+### 3. Setup API Key
 
 Buat file `.env`:
 
+```env
+GEMINI_API_KEY=YOUR_API_KEY
 ```
-GEMINI_API_KEY=your_api_key_here
-```
+
+---
 
 ### 4. Jalankan Server
 
@@ -137,68 +134,65 @@ python server.py
 Buka di browser:
 
 ```
-http://127.0.0.1:5000
+http://localhost:5000
 ```
 
-## 📊 Dataset
-
-* Dataset mini hoaks vs valid
-* Format JSON
-* Digunakan untuk evaluasi model
-
-Contoh:
-
-```json
-{
-  "text": "Minum air garam menyembuhkan semua penyakit",
-  "label": "hoaks"
-}
-```
+---
 
 ## 🔒 Keamanan
 
-- API Key disimpan di `.env`
-- Menggunakan `.gitignore` untuk proteksi
-- Backend sebagai penghubung API (tidak expose key)
+* API key disimpan di `.env`
+* `.env` sudah di-ignore oleh `.gitignore`
+* Validasi input user
+* Error handling untuk API
 
-## ⚠️ Limitasi
+---
 
-- Bergantung pada API AI (rate limit / quota)
-- Akurasi tergantung kualitas prompt & model
-- Dataset masih skala kecil
-- Belum menggunakan model ML training sendiri
+## ⚡ Optimasi
 
-## 🌟 Pengembangan Selanjutnya
+* Prompt AI sudah dioptimalkan (hemat token)
+* Retry system untuk menghindari rate limit
+* Disable button saat request (anti spam)
+* Loading indicator untuk UX
 
-* Dashboard admin dataset
-* Sistem login user
-* Visualisasi hasil (chart)
-* Integrasi API cek fakta
-* Model ML lokal (tanpa API)
-* Fitur upload link berita
-* Kuis edukasi anti-hoaks
+---
 
-## 👨‍💻 Teknologi yang Digunakan
+## 🎯 Tujuan Project
 
-* Python (Flask)
-* HTML, CSS, JavaScript
-* Google Gemini API
-* JSON Dataset
+* Meningkatkan literasi digital
+* Membantu pengguna mengenali hoaks
+* Menggabungkan AI + edukasi interaktif
 
-## 📌 Status Project
+---
 
-🚧 Development (Prototype)
+## 📈 Status Development
 
-## 🤝 Kontribusi
+```
+✔ Chatbot AI        (100%)
+✔ Modul Edukasi     (100%)
+✔ Quiz              (100%)
+✔ UI/UX             (100%)
+✔ Integrasi API     (100%)
+```
 
-Project ini dibuat untuk keperluan akademik dan pengembangan pembelajaran AI.
+---
 
-## 📄 Lisensi
+## 🚀 Pengembangan Selanjutnya
 
-Free to use for educational purposes.
+* Login & user tracking
+* Penyimpanan history analisis
+* Dashboard statistik
+* Deploy ke hosting publik
 
-## Team 
-Pradipa A.
-Alif S.
-Boni S.
-Ziyya U.
+---
+
+## 👨‍💻 Author
+Pradipa A. Ziyya R. Alif S. Bony S.
+
+---
+
+## 🏁 Penutup
+
+Project ini menggabungkan; Teknologi AI, Edukasi, Interaksi pengguna. Dengan tujuan memberikan solusi sederhana namun efektif dalam menghadapi penyebaran hoaks di era digital.
+
+---
